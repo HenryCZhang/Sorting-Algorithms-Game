@@ -102,7 +102,7 @@ export default function Header() {
           <Navbar.Collapse className="justify-content-end">
             <PersonIcon style={{ color: "white", marginRight: "5px" }} />
             <Navbar.Text style={{ color: "White", marginRight: "10px" }}>
-              {isSignedIn ? <div>Signed in as: {userEmail}</div> : <div></div>}
+              {isSignedIn ? <div>Signed in as: <strong>{userEmail}</strong></div> : <div></div>}
             </Navbar.Text>
             <Button
               style={{ color: "#e85d04", fontWeight:"bold"}}
