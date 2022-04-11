@@ -2,6 +2,9 @@
 
 Sorting Algorithms Playground is an educational gamified website that helps undergraduate students understand sorting algorithm(s).
 
+# 🚀 View Demo
+
+
 ## The algorithms
 
 * [X] We started with the MergeSort as the default algorithm. The system can be designed to allow other algorithms to be added later. 
@@ -39,12 +42,12 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 ### Last but not least -> Contributors
-*lunjielee https://github.com/lunjielee
-*HenryCZhang https://github.com/HenryCZhang
-*TaiyiXu https://github.com/TaiyiXu
-*Brianna0510 https://github.com/Brianna0510
-*AileenP9 https://github.com/AileenP9
-*ivesljc1 https://github.com/ivesljc1
+✅ lunjielee https://github.com/lunjielee
+✅  HenryCZhang https://github.com/HenryCZhang
+✅  TaiyiXu https://github.com/TaiyiXu
+✅  Brianna0510 https://github.com/Brianna0510
+✅ AileenP9 https://github.com/AileenP9
+✅  ivesljc1 https://github.com/ivesljc1
 
 ## References
 
