@@ -7,7 +7,6 @@ import wrongSound from "../assets/sounds/wrong.mp3";
 import { confirmAlert } from "react-confirm-alert";
 
 //From Ives Luo
-
 let error = 0;
 let currentScore = 0;
 
@@ -19,11 +18,10 @@ export default function SquareBtnStyleWithInput(props) {
 
   const checkAns = (event) => {
     if (event.target.value === event.target.id) {
-      props.setCurrentPoint(props.currentPoint + 1);
+      props.setCurrentPoint(props.currentPoint + 1);//array generation step point
       currentScore++;
-      props.setScore(currentScore);
+      props.setScore(currentScore);//set score
       event.target.disabled = true;
-
       setInputColor('#b9fbc0');
       alert.success("correct");
       playCorrectSound();
@@ -31,7 +29,8 @@ export default function SquareBtnStyleWithInput(props) {
     } else {
       event.target.value = "";
       error++;
-      if (error !== 3) {
+      props.setMistakeAllowed(props.mistakeAllowed-1);//testing
+      if (error !== props.maxError) {
         alert.error("wrong answer " + error);
         setInputColor('#fe6d73');
         playWrongSound();

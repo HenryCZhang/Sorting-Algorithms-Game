@@ -4,9 +4,10 @@ import Button from './Button';
 export default function LevelControl(props) {
     const [hasStarted, setHasStarted] = React.useState(props.hasStarted);
     const [score, setScore] = React.useState(0);
-
+    const [mistakeAllowed, setMistakeAllowed] = React.useState(0);
     React.useEffect(() => {
         setScore(props.getScore());//get score from level component
+        setMistakeAllowed(props.mistakeAllowed);
     })
 
     const levelStart = () => {
@@ -31,9 +32,12 @@ export default function LevelControl(props) {
         } else {
             return (
                 <div className="statistics-area">
-                    <span>Points:</span>
+                    <span>Score:</span>
                     <span className="mistakes-counter">{score}</span>
+                    <span style={{marginLeft:"30px"}}>Mistakes Allowed:</span>
+                    <span className="mistakes-counter">{mistakeAllowed}</span>
                 </div>
+                
             )
         }
     }

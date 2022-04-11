@@ -12,12 +12,14 @@ const helper = new Helper();
 
 export default function Level4() {
   const currentLevel = 4;
+  const maxError = 10;
   const [currentPoint, setCurrentPoint] = React.useState(0);
   const [currentQuestion, setCurrentQuestion] = React.useState([]);
   const [summaryArray, setSummaryArray] = React.useState([]);
   const [hasStarted, setHasStarted] = React.useState(false);
   const [currentStep, setCurrentStep] = React.useState(0);
   const [score, setScore] = React.useState(0);
+  const [mistakeAllowed, setMistakeAllowed] = React.useState(maxError);
   const displayArray = summaryArray.slice(0, currentStep - 1);
   const [time, setTime] = React.useState(0); //time from Timer component
   const [timerOn, setTimeOn] = React.useState(false);
@@ -41,6 +43,7 @@ export default function Level4() {
     setCurrentPoint(20);
     setTimeOn(true);
     setTime(0);
+    setMistakeAllowed(maxError);
   };
 
   const previousStep = () => {
@@ -71,6 +74,7 @@ export default function Level4() {
         restart={levelRestart}
         hasStarted={hasStarted}
         getScore={getScore}
+        mistakeAllowed={mistakeAllowed}
       />
       <div className="display-area">
         <div className="display-area-row">
@@ -98,6 +102,9 @@ export default function Level4() {
                         currentPoint={currentPoint}
                         setCurrentPoint={setCurrentPoint}
                         setScore={setScore}
+                        maxError={maxError}
+                        mistakeAllowed={mistakeAllowed}
+                        setMistakeAllowed={setMistakeAllowed}
                       ></SquareBtnStyleWithInput>
                     )
                   })}
@@ -117,6 +124,9 @@ export default function Level4() {
                           currentPoint={currentPoint}
                           setCurrentPoint={setCurrentPoint}
                           setScore={setScore}
+                          maxError={maxError}
+                          mistakeAllowed={mistakeAllowed}
+                          setMistakeAllowed={setMistakeAllowed}
                         ></SquareBtnStyleWithInput>
                       ))}
                       <SquareBtnStyle opacity />

@@ -8,7 +8,7 @@ import { useAlert } from 'react-alert';
 import KickOutTimer from '../components/KickOutTimer';
 import SubmitBtn from '../components/SubmitBtn';
 import { Button, Col } from 'react-bootstrap';
-import { Summarize } from "@mui/icons-material";
+
 
 const helper = new Helper();
 
@@ -27,6 +27,8 @@ export default function CustomLevel() {
   const displayArray = summaryArray.slice(0, currentStep - 1);
   const [time, setTime] = React.useState(0); //time from Timer component
   const [timerOn, setTimeOn] = React.useState(false);
+  const maxError = currentArraySize;
+  const [mistakeAllowed, setMistakeAllowed] = React.useState(maxError); 
 
   const levelStart = () => {
     let generate = [];
@@ -85,9 +87,9 @@ export default function CustomLevel() {
     const exceedFlag = tempArr.some((element) => element > 999);
     if (
       tempArr.length !== 0 &&
-      (exceedFlag || tempArr.length < 5 || tempArr.length > 8)
+      (exceedFlag || tempArr.length < 3 || tempArr.length > 8)
     ) {
-      alert.error("Please enter 5 to 8 positive integers between 0 and 999", {
+      alert.error("Please enter 3 to 8 positive integers between 0 and 999", {
         timeout: 3000,
       });
       setRunDisabled(true);
@@ -118,44 +120,52 @@ export default function CustomLevel() {
                 className="w-100 d-flex align-items-center justify-content-center"
                 style={{ marginBottom: "16px" }}
               >
-                <Col sm={3} className="text-align-left">
+                <Col sm={2} className="text-align-left">
                   Array size:
                 </Col>
-                <Col sm={8} className="text-align-left">
+                <Col sm={3} className="text-align-left">
                   <select
                     className="w-50"
                     style={{
-                      border: "1px solid #e5e7e8",
+                      border: "1px solid #ffb700",
                       height: "38px",
                       borderRadius: "3px",
                     }}
                     value={currentArraySize}
                     onChange={selectArraySize}
                   >
+                    <option value="3">3</option>
                     <option value="5">5</option>
                     <option value="6">6</option>
                     <option value="7">7</option>
                     <option value="8">8</option>
                   </select>
                 </Col>
+                <Col sm={3} className="text-align-left">
+                  Mistakes Allowed: {currentArraySize}
+                </Col>
+
               </label>
               <label className="w-100 d-flex align-items-center justify-content-center">
                 <Col sm={3} className="text-align-left">
                   Array Values (optional):
                 </Col>
-                <Col sm={8}>
+                <Col sm={4} className="text-align-left">
                   <input
                     type="text"
                     value={currentArrayValuesStr}
+                    placeholder="1 2 3 4 ..."
                     onChange={changeArrayValues}
                     onBlur={blurArrayValues}
                     className="w-100"
                     style={{
-                      border: "1px solid #e5e7e8",
+                      border: "1px solid #ffb700",
                       height: "38px",
                       borderRadius: "3px",
                     }}
                   />
+                </Col>
+                <Col sm={3} className="text-align-left">
                 </Col>
               </label>
             </form>
@@ -210,6 +220,9 @@ export default function CustomLevel() {
                         currentPoint={currentPoint}
                         setCurrentPoint={setCurrentPoint}
                         setScore={setScore}
+                        maxError={maxError}  
+                        mistakeAllowed={mistakeAllowed}  
+                        setMistakeAllowed={setMistakeAllowed}  
                       ></SquareBtnStyleWithInput>
                     )
                   })}
@@ -229,6 +242,9 @@ export default function CustomLevel() {
                           currentPoint={currentPoint}
                           setCurrentPoint={setCurrentPoint}
                           setScore={setScore}
+                          maxError={maxError}  
+                          mistakeAllowed={mistakeAllowed}  
+                          setMistakeAllowed={setMistakeAllowed}  
                         ></SquareBtnStyleWithInput>
                       ))}
                       <SquareBtnStyle opacity />

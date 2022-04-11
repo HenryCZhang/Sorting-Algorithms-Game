@@ -76,7 +76,6 @@ export default function LoginPage() {
                   <Form.Group id="email">
                     <Form.Label>Email</Form.Label>
                     <Form.Control
-                      placeholder="admin@123.com"
                       type="email"
                       ref={emailRef}
                       required
@@ -85,7 +84,6 @@ export default function LoginPage() {
                   <Form.Group id="password">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
-                      placeholder="admin123"
                       type="password"
                       ref={passwordRef}
                       required

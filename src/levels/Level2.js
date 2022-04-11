@@ -10,36 +10,39 @@ const helper = new Helper();
 
 export default function Level2() {
     const currentLevel = 2;
+    const maxError = 8;//copy
     const [currentPoint, setCurrentPoint] = React.useState(0);
     const [currentQuestion, setCurrentQuestion] = React.useState([]);
     const [summaryArray, setSummaryArray] = React.useState([]);
     const [hasStarted, setHasStarted] = React.useState(false);
     const [currentStep, setCurrentStep] = React.useState(0);
     const [score, setScore] = React.useState(0);
+    const [mistakeAllowed, setMistakeAllowed] = React.useState(maxError);//copy
     const displayArray = summaryArray.slice(0, currentStep - 1);
 
     const levelStart = () => {
-        let generate = helper.generateNumberArray(10, 20);
+        let generate = helper.generateNumberArray(5, 20);
         setCurrentQuestion(generate);
         setSummaryArray(helper.generateMap(JSON.parse(JSON.stringify(generate)), localStorage.getItem("selectedAlgorithm")));
         setCurrentStep(1);
         setHasStarted(true);
-        setCurrentPoint(10);
+        setCurrentPoint(5);
     };
 
     const levelRestart = () => {
-        let generate = helper.generateNumberArray(10, 20);
+        let generate = helper.generateNumberArray(5, 20);
         setCurrentQuestion(generate);
         setSummaryArray(helper.generateMap(JSON.parse(JSON.stringify(generate)), localStorage.getItem("selectedAlgorithm")));
         setCurrentStep(1);
         setHasStarted(true);
-        setCurrentPoint(10);
+        setCurrentPoint(5);
+        setMistakeAllowed(maxError);//copy
     };
 
     const previousStep = () => {
         if (currentStep > 0) {
             setCurrentStep(currentStep - 1);
-            setCurrentPoint(10);
+            setCurrentPoint(5);
         }
     };
 
@@ -65,6 +68,7 @@ export default function Level2() {
                 currentLevel={currentLevel}
                 currentPoint={currentPoint}
                 getScore={getScore}
+                mistakeAllowed={mistakeAllowed}//copy
             />
             <div className="display-area">
                 <div className="display-area-row">
@@ -92,6 +96,9 @@ export default function Level2() {
                                                 currentPoint={currentPoint}
                                                 setCurrentPoint={setCurrentPoint}
                                                 setScore={setScore}
+                                                maxError={maxError}//copy
+                                                mistakeAllowed={mistakeAllowed}//copy
+                                                setMistakeAllowed={setMistakeAllowed}//copy
                                             ></SquareBtnStyleWithInput>
                                         )
                                     })}
@@ -111,6 +118,9 @@ export default function Level2() {
                                                     currentPoint={currentPoint}
                                                     setCurrentPoint={setCurrentPoint}
                                                     setScore={setScore}
+                                                    maxError={maxError}
+                                                    mistakeAllowed={mistakeAllowed}
+                                                    setMistakeAllowed={setMistakeAllowed}
                                                 ></SquareBtnStyleWithInput>
                                             ))}
                                             <SquareBtnStyle opacity />
