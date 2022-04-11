@@ -1,85 +1,59 @@
-# Sorting Algorithm Educational Game
+# Sorting Algorithms Playground (Overview)
 
-Create an educational game in a web or mobile application that helps undergraduate students understand sorting algorithm(s) according to the following ~~requirements~~ description.
+Sorting Algorithms Playground is an educational gamified website that helps undergraduate students understand sorting algorithm(s).
 
-## The algorithms (**Must Have**)
+# View Demo 🚀 
 
-* [X] We can start with the MergeSort as the only algorithm; however, the system should be designed to allow other algorithms to be added later.
+https://sortingalgorithmgame.web.app/
 
+## The algorithms
+
+* [X] We started with the MergeSort as the default algorithm. The system can be designed to allow other algorithms to be added later. 
+* [X] Currently we have 
 * Merge Sort
 * Bubble Sort
 
-## Levels
+# Installation Menu
 
-* **Level 1:**  (__Must Have__)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-  * [X] A set of 10 numbers are randomly generated out of the range (1-20) **(updated on Jan. 24th at 09:40 am)**
-  * [X] The steps of the algorithm would be executed as visual animation accompanied with explanation texts
-    e.g., [mergesortAV](https://opendsa-server.cs.vt.edu/embed/mergesortAV) (this link is provided as an example of the idea and is not to be blindly replicated)
-  * [X] The animation should also be interactive in order to keep the user engaged. **(*clarification* updated on Feb. 14th at 10:18 am)**
-  * [X] The merging steps are important to understand the algorithm so the user should see them done step by step which also applies to the rest of the levels. **(*clarification* updated on Feb. 14th at 10:18 am)**
-* **Level 2:** (__Must Have__)
+## Available Scripts
 
-  * [X] A set of 10 numbers are randomly generated out of the range (1-20) **(updated on Jan. 24th at 09:40 am)**
-  * [X] The steps of the algorithm are displayed in the text allowing the user to move the numbers according to the current step.
+In the project directory, you can run:
 
-  * Feedback should be provided at each step **(updated on Jan. 24th at 09:40 am)**
-    * [X] Positive feedback (visual and audio) when the step is correct
-    * [X] Negative feedback (visual and audio) when the step is incorrect
-* **Level 3:** (__Must Have__)
+### `npm start`
 
-  * [X] A set of 10 numbers are randomly generated out of the range (1-20)
-  * [X] The user is to decide what needs to be done at every step
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-  * Feedback should be provided at each step
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-    * [X] Positive feedback (visual and audio) when the step is correct
-    * [X] Negative feedback (visual and audio) when the step is incorrect
-* **Level 4:** (*Should Have*)
+### `npm test`
 
-  * [X] A set of 20 numbers are randomly generated out of the range (1-50)
-  * [X] The user is to decide what needs to be done at every step
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-  * Feedback should be provided at each step
-    * [X] Positive feedback (visual and audio) when the step is correct
-    * [X] Negative feedback (visual and audio) when the step is incorrect
-* **Level 5:** (*Should Have*)
+### `npm run build`
 
-  * [X] A set of 50 numbers are randomly generated out of the range (1-100)
-  * [X] The user is to decide what needs to be done at every step
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-  * Feedback should be provided at each step
-    * [X] Positive feedback (visual and audio) when the step is correct
-    * [X] Negative feedback (visual and audio) when the step is incorrect
-* **Custom Level:** (Nice to Have)
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-  * [X] The user the number of numbers (i.e. the length of the array) and the range to select from
-  * [X] The user is to decide what needs to be done at every step
+### Last but not least -> Contributors
+✅ lunjielee https://github.com/lunjielee
+ 
+✅  HenryCZhang https://github.com/HenryCZhang
 
-  * Feedback should be provided at each step
-    * [X] Positive feedback (visual and audio) when the step is correct
-    * [X] Negative feedback (visual and audio) when the step is incorrect
+✅  TaiyiXu https://github.com/TaiyiXu
 
-## Attempts (*Should Have*)
+✅  Brianna0510 https://github.com/Brianna0510
 
-* [X] The user is allowed to make up to 3 mistakes at each level.
+✅ AileenP9 https://github.com/AileenP9
 
-* If a user makes 3 mistakes, they’re giving the following options
-
-  * [X] restart the same level
-  * [X] go back to any of the previous levels
-  * [X] switch to the latest level with another algorithm  **(updated on Jan. 11th at 10:45 am)**
-  * [X] or quit the game
-
-## Timeout (*Should Have*) **(updated on Jan. 24th at 09:40 am)**
-
-* [X] A timer should be displayed in the interface to inform the user of how long they spent on each level.
-* [X] After __5__ minutes of inactivity, the session should time out and go back to the home page
-
-## Logging Activities ~(Should Have)~
-
-* [X] (*Should have*) User actions need time spent at each level should be logged for later analysis **(updated on Jan. 11th at 10:45 am)**
-* [X] (Nice to Have) An admin can view visual analytics of the logged data **(updated on Jan. 11th at 10:45 am)**
+✅  ivesljc1 https://github.com/ivesljc1
 
 ## References
 
