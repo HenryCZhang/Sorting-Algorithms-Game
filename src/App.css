@@ -56,8 +56,12 @@
   margin-top: 10px;
 }
 #homeBtn:hover{
+  transition: transform .5s;
+  transform: translateY(-5px);
+  margin-bottom: 10px;
   background-color: #e85d04;
   color: white;
+  box-shadow: 0 0 20px #e85d04;
 }
 
 .text-box {
@@ -306,7 +310,9 @@
 }
 .submitBtn:hover{
   background-color: #ffb700;
-  /* color: white; */
+  transition: transform .5s;
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #ffb700;
 }
 
 .submit-loading{

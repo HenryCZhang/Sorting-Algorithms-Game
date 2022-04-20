@@ -20,11 +20,11 @@ export default function LevelMain() {
       <div className="LevelMain">
         <h1>Welcome to Sorting Algorithms Playground</h1>
 
-        <h3 style={{ marginTop: "40px", marginBottom:"10px"}}>
+        <h3 style={{ marginTop: "40px", marginBottom: "10px" }}>
           This website is dedicated to passionate sorting algorithm learners
           like you!
         </h3>
-        <h4 style={{marginBottom:"20px"}}>
+        <h4 style={{ marginBottom: "20px" }}>
           we gamified the sorting algorithm learning experience where you can
           progress at your own pace through different levels.{" "}
         </h4>
@@ -37,14 +37,10 @@ export default function LevelMain() {
         style={{ width: "40rem" }}
       />
       <div>
-      <Button
-              id="homeBtn"
-              href={"/level1"}
-            >
-              View Demo
-            </Button>
+        <Button id="homeBtn" href={"/level1"}>
+          View Demo
+        </Button>
       </div>
-          
     </div>
   );
 }
