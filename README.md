@@ -9,7 +9,7 @@ Sorting Algorithms Playground is an educational gamified website that helps unde
 
 # View Live Demo 🚀 
 
-https://sortingalgorithmgame.web.app/
+# https://sortingalgorithmgame.web.app/
 
 ## The algorithms
 
