@@ -1,15 +1,21 @@
-# Sorting Algorithms Playground (Overview)
+<h2 align="center">
+ Sorting Algorithms Playground (Overview)
+</h2>
+<div align="center">
+  <img alt="Demo" src="./Image/demo.png" />
+</div>
 
 Sorting Algorithms Playground is an educational gamified website that helps undergraduate students understand sorting algorithm(s).
 
-# View Demo 🚀 
+# View Live Demo 🚀 
 
 https://sortingalgorithmgame.web.app/
 
 ## The algorithms
 
-* [X] We started with the MergeSort as the default algorithm. The system can be designed to allow other algorithms to be added later. 
-* [X] Currently we have 
+➡️  We started with the MergeSort as the default algorithm. The system can be designed to allow other algorithms to be added later. 
+
+➡️  Currently we have 
 * Merge Sort
 * Bubble Sort
 
