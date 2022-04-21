@@ -1,17 +1,18 @@
-<h2 align="center">
+<h1 align="center">
  Sorting Algorithms Playground (Overview)
-</h2>
+</h1>
 <div align="center">
   <img alt="Demo" src="./Image/demo.png" />
 </div>
-
+<h3>
 Sorting Algorithms Playground is an educational gamified website that helps undergraduate students understand sorting algorithm(s).
+</h3>
+<h2 align="center">
+View Live Demo 🚀 <br/>
+ https://sortingalgorithmgame.web.app/
+</h2>
 
-# View Live Demo 🚀 
-
-# https://sortingalgorithmgame.web.app/
-
-## The algorithms
+## The Algorithms
 
 ➡️  We started with the MergeSort as the default algorithm. The system can be designed to allow other algorithms to be added later. 
 
@@ -48,7 +49,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-### Last but not least -> Contributors
+### Last But Not Least -> Contributors
 ✅ lunjielee https://github.com/lunjielee
  
 ✅  HenryCZhang https://github.com/HenryCZhang
