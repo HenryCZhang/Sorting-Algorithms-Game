@@ -7,9 +7,17 @@ export default function Header() {
   const [isSignedIn, setIsSignedIn] = React.useState(false);
   const [userEmail, setUserEmail] = React.useState(null);
   const [isAdmin, setIsAdmin] = React.useState(false);
-  const [currentAlgorithm, setCurrentAlgorithm] = React.useState(
-    localStorage.getItem("selectedAlgorithm")
-  );
+  const [currentAlgorithm, setCurrentAlgorithm] = React.useState('ms');
+
+  React.useEffect(() => {
+    if (localStorage.getItem("userEmail") !== null) {
+      setIsSignedIn(true);
+      setUserEmail(localStorage.getItem("userEmail"));
+    }
+    if (userEmail === "admin@123.com") {
+      setIsAdmin(true);
+    }
+  }, [isSignedIn]);
 
   const prettyPrint = (str) => {
     switch (str) {
@@ -22,40 +30,27 @@ export default function Header() {
     }
   };
 
-  React.useEffect(() => {
-    if (localStorage.getItem("selectedAlgorithm") !== currentAlgorithm) {
-      window.location.reload();
-    }
-    if (localStorage.getItem("selectedAlgorithm") === null) {
-      localStorage.setItem("selectedAlgorithm", "ms");
-    } else {
-      localStorage.setItem("selectedAlgorithm", currentAlgorithm);
-    }
-  }, [currentAlgorithm]);
-
-  React.useEffect(() => {
-    if (localStorage.getItem("userEmail") !== null) {
-      setIsSignedIn(true);
-      setUserEmail(localStorage.getItem("userEmail"));
-    }
-    if (userEmail === "admin@123.com") {
-      setIsAdmin(true);
-    }
-  }, [isSignedIn]);
+  const changeCurrentAlgorithm = (algorithm)=>{
+    localStorage.setItem("selectedAlgorithm", algorithm);
+    setCurrentAlgorithm(algorithm);
+    window.location.reload();
+  }
 
   return (
     <div className="Header">
       <Navbar className="header-container" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="/">Sorting Algorithms Playground</Navbar.Brand>
+          <div style={{marginRight:"50px",marginLeft:"20px"}}>
+          <Navbar.Brand href="/"><span style={{fontSize:"25px"}}>Home</span></Navbar.Brand>
+          </div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <NavDropdown title="Select a Algorithm" id="header-dropdown">
-                <NavDropdown.Item id="header-dropdown-item" onClick={() => setCurrentAlgorithm("ms")}>
+              <NavDropdown title="Select an Algorithm" id="header-dropdown">
+                <NavDropdown.Item id="header-dropdown-item" onClick={() => changeCurrentAlgorithm("ms")}>
                   Merge Sort
                 </NavDropdown.Item>
-                <NavDropdown.Item id="header-dropdown-item" onClick={() => setCurrentAlgorithm("bs")}>
+                <NavDropdown.Item id="header-dropdown-item" onClick={() => changeCurrentAlgorithm("bs")}>
                   Bubble Sort
                 </NavDropdown.Item>
               </NavDropdown>
@@ -108,7 +103,7 @@ export default function Header() {
               style={{ color: "#e85d04", fontWeight:"bold"}}
               variant="light"
               onClick={isSignedIn ? logOut : null}
-              href={isSignedIn ? "/" : "sign_in"}
+              href={isSignedIn ? "/" : "log_in"}
             >
               {isSignedIn ? "Logout" : "Login"}
             </Button>

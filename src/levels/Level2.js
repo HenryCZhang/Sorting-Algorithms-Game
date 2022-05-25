@@ -10,14 +10,14 @@ const helper = new Helper();
 
 export default function Level2() {
     const currentLevel = 2;
-    const maxError = 8;//copy
+    const maxError = 10;
     const [currentPoint, setCurrentPoint] = React.useState(0);
     const [currentQuestion, setCurrentQuestion] = React.useState([]);
     const [summaryArray, setSummaryArray] = React.useState([]);
     const [hasStarted, setHasStarted] = React.useState(false);
     const [currentStep, setCurrentStep] = React.useState(0);
     const [score, setScore] = React.useState(0);
-    const [mistakeAllowed, setMistakeAllowed] = React.useState(maxError);//copy
+    const [mistakeAllowed, setMistakeAllowed] = React.useState(maxError);
     const displayArray = summaryArray.slice(0, currentStep - 1);
 
     const levelStart = () => {

@@ -7,6 +7,7 @@ import {
   sendPasswordResetEmail,
 } from "firebase/auth";
 import { useAlert } from "react-alert";
+import { GithubSignIn, GoogleSignIn } from "./ThirdPartySignIn";
 
 export default function LoginPage() {
   const emailRef = useRef();
@@ -104,6 +105,9 @@ export default function LoginPage() {
                     Log In
                   </Button>
                 </Form>
+                    {/* Third Party Sign-in */}
+                    <GoogleSignIn />
+                <GithubSignIn />
               </Card.Body>
             </Card>
             <div className="w-100 text-center mt-2" >

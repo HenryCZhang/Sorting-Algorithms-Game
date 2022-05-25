@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { GithubSignIn, GoogleSignIn } from "./ThirdPartySignIn";
 import { auth } from "./firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
@@ -76,13 +75,10 @@ export default function SignInPage() {
                     Sign Up
                   </Button>
                 </Form>
-                {/* Third Party Sign-in */}
-                <GoogleSignIn />
-                <GithubSignIn />
               </Card.Body>
             </Card>
             <div className="w-100 text-center mt-2">
-              Already have an account? <Link to="/login">Log In</Link>
+              Already have an account? <Link to="/log_in">Log In</Link>
             </div>
           </div>
         </Container>

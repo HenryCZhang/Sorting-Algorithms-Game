@@ -34,7 +34,7 @@ export default function App() {
           <Route path="/PlayerViewRecordPage" element={<PlayerViewRecordPage />} />
           {/*Auth*/}
           <Route path="/sign_in" element={<SignInPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/log_in" element={<LoginPage />} />
           <Route path="/admin_page" element={<AdminPage />} />
         </Routes>
       </div>
