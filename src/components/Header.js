@@ -7,7 +7,7 @@ export default function Header() {
   const [isSignedIn, setIsSignedIn] = React.useState(false);
   const [userEmail, setUserEmail] = React.useState(null);
   const [isAdmin, setIsAdmin] = React.useState(false);
-  const [currentAlgorithm, setCurrentAlgorithm] = React.useState('ms');
+  const [currentAlgorithm, setCurrentAlgorithm] = React.useState(localStorage.getItem("selectedAlgorithm"));
 
   React.useEffect(() => {
     if (localStorage.getItem("userEmail") !== null) {
@@ -18,6 +18,17 @@ export default function Header() {
       setIsAdmin(true);
     }
   }, [isSignedIn]);
+
+  React.useEffect(() => {
+    if (localStorage.getItem("selectedAlgorithm") !== currentAlgorithm) {
+      window.location.reload();
+    }
+    if (localStorage.getItem("selectedAlgorithm") === null) {
+      localStorage.setItem("selectedAlgorithm", 'ms');
+    } else {
+      localStorage.setItem("selectedAlgorithm", currentAlgorithm);
+    }
+  }, [currentAlgorithm]);
 
   const prettyPrint = (str) => {
     switch (str) {
@@ -30,11 +41,6 @@ export default function Header() {
     }
   };
 
-  const changeCurrentAlgorithm = (algorithm)=>{
-    localStorage.setItem("selectedAlgorithm", algorithm);
-    setCurrentAlgorithm(algorithm);
-    window.location.reload();
-  }
 
   return (
     <div className="Header">
@@ -47,10 +53,10 @@ export default function Header() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <NavDropdown title="Select an Algorithm" id="header-dropdown">
-                <NavDropdown.Item id="header-dropdown-item" onClick={() => changeCurrentAlgorithm("ms")}>
+                <NavDropdown.Item id="header-dropdown-item" onClick={() => setCurrentAlgorithm('ms')}>
                   Merge Sort
                 </NavDropdown.Item>
-                <NavDropdown.Item id="header-dropdown-item" onClick={() => changeCurrentAlgorithm("bs")}>
+                <NavDropdown.Item id="header-dropdown-item" onClick={() => setCurrentAlgorithm('bs')}>
                   Bubble Sort
                 </NavDropdown.Item>
               </NavDropdown>
