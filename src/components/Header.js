@@ -60,6 +60,9 @@ export default function Header() {
                   Bubble Sort
                 </NavDropdown.Item>
               </NavDropdown>
+              <Navbar.Text style={{ marginLeft: "10px", color: "white", marginRight:"10px"}}>
+                <strong id='selected-algorithm'>{prettyPrint(currentAlgorithm)}</strong>
+              </Navbar.Text>
               <NavDropdown title="Select a Level" id="header-dropdown">
                 <NavDropdown.Item id="header-dropdown-item" href="/level1">
                   Level1 (Instruction)
@@ -94,10 +97,7 @@ export default function Header() {
               ) : (
                 ""
               )}
-              <Navbar.Text style={{ marginLeft: "10px", color: "white" }}>
-                Selected Algorithm:{" "}
-                <strong id='selected-algorithm'>{prettyPrint(currentAlgorithm)}</strong>
-              </Navbar.Text>
+             
             </Nav>
           </Navbar.Collapse>
           <Navbar.Collapse className="justify-content-end">

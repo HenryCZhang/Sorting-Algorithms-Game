@@ -12,14 +12,13 @@ import {
 // Your web app's Firebase configuration
 //Henry: it's better to use .env.local file to hide API keys on github
 const firebaseConfig = {
-  apiKey: "AIzaSyCJ9wH_Wdyo81jXe06j3c_Ce2ua8DOH47U",
-  authDomain: "sortingalgorithmgame.firebaseapp.com",
-  databaseURL: "https://sortingalgorithmgame-default-rtdb.firebaseio.com",
-  projectId: "sortingalgorithmgame",
-  storageBucket: "sortingalgorithmgame.appspot.com",
-  messagingSenderId: "159030466442",
-  appId: "1:159030466442:web:25e9c91e2603465e9b9a73",
-  measurementId: "G-16S9Q0M7SK",
+  apiKey: "AIzaSyDVSGimbUdPsz7DN312WkGJ9dnc1h_bDVI",
+  authDomain: "sorting-algorithm-playground.firebaseapp.com",
+  projectId: "sorting-algorithm-playground",
+  storageBucket: "sorting-algorithm-playground.appspot.com",
+  messagingSenderId: "184366387061",
+  appId: "1:184366387061:web:d291751a57fdfb2f878d3c",
+  measurementId: "G-6L5T7HSMCS"
 };
 
 // Initialize a Firebase object
